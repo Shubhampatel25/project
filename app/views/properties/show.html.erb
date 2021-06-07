@@ -29,7 +29,7 @@
         <p>
           <strong>Photo:</strong>
           <% if @property.photo.attached? %>
-            <%= image_tag @property.photo %>
+            <%= image_tag @property.photo, width: "200px" %>
           <% end %>  
         </p>
       </div>
