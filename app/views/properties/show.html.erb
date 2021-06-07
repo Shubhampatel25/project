@@ -1,6 +1,13 @@
+
+         
+         <div class="main-photo">
+          <% if @property.photo.attached? %>
+            <%= image_tag @property.photo, style:"width:105%; height:95vh; position: relative;"%>
+          <% end %> 
+         </div> 
 <div class="container">
   <div class="row">
-    <div class="col">
+    <div class="col">  
        <p>
          <strong>Name:</strong>
          <%= @property.name %>
@@ -24,13 +31,6 @@
         <p>
           <strong>Bathroom:</strong>
           <%= @property.bathroom %>
-        </p>
-
-        <p>
-          <strong>Photo:</strong>
-          <% if @property.photo.attached? %>
-            <%= image_tag @property.photo, width: "200px" %>
-          <% end %>  
         </p>
       </div>
     </div>

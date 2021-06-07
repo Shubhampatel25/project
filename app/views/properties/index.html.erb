@@ -1,7 +1,7 @@
 
 
 <h1>Properties</h1>
-
+<br />
 <table class="table table-bordered">
   <thead>
     <tr>
@@ -23,7 +23,7 @@
         <td><%= property.price %></td>
         <td><%= property.rooms %></td>
         <td><%= property.bathroom %></td>
-        <td><%= image_tag property.photo, width: "200px" %></td>
+        <td><%= image_tag property.photo, width: "200px"%></td>
         <td><%= link_to 'Show', property %></td>
         <td><%= link_to 'Edit', edit_property_path(property) %></td>
         <td><%= link_to 'Destroy', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
