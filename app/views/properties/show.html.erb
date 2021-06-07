@@ -28,7 +28,9 @@
 
         <p>
           <strong>Photo:</strong>
-          <%= @property.photo %>
+          <% if @property.photo.attached? %>
+            <%= image_tag @property.photo %>
+          <% end %>  
         </p>
       </div>
     </div>
