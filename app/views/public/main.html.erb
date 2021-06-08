@@ -1,16 +1,18 @@
 <main>
 
-  <section class="py-5 text-center container  card shadow-sm">
+ <section class="py-5 text-center shadow-sm " class="photo">
     <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto ">
-        <h4 class="fw-light">Search for you home today....</h4>
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="display-3">Search for your home today....</h1>
           <%= link_to "View Property", properties_path, class:"btn btn-primary my-2" %>
-          
         </p>
       </div>
     </div>
   </section>
-<br />
+<br /><br /><br /></br></br>
+
+<h2>Latest Property</h2>
+<br /><br />
 <section>
      <div class="row">        
         <% @properties.each do |property| %>
@@ -20,13 +22,14 @@
              <h4>Address: <%= property.address %></h4>
              <h4>Price: <%= property.price %></h4>
              <h4>Rooms: <%= property.rooms %></h4>
-             <h4>Bathroom: <%= property.bathroom %></h4>
-           </div> 
+             <h4>Bathroom: <%= property.bathroom %></h4> 
+          </div> 
         <% end %>
-      </div>        
+      </div> 
+    </div>         
   </section>
   
-  <br /><br /></br></br></br>
+  <br /><br /></br></br></br> <br /><br /></br></br></br>
 <div class="container">
     <!-- Example row of columns -->
     <div class="row text-center pt-5 pb-5 mb-5 bg-light">

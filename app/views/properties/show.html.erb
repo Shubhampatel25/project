@@ -1,17 +1,14 @@
 
-         
-         <div class="main-photo">
-          <% if @property.photo.attached? %>
-            <%= image_tag @property.photo, style:"width:105%; height:95vh; position: relative;"%>
-          <% end %> 
-         </div> 
+  <% if @property.photo.attached? %>
+   <%= image_tag(@property.thumbnail) %>
+  <% end %>
+ <br />  
 <div class="container">
   <div class="row">
     <div class="col">  
-       <p>
-         <strong>Name:</strong>
+       <h2>
          <%= @property.name %>
-        </p>
+        </h2>
 
         <p>
           <strong>Address:</strong>
@@ -36,5 +33,3 @@
     </div>
 </div>      
 
-<%= link_to 'Edit', edit_property_path(@property) %> |
-<%= link_to 'Back', properties_path %>
