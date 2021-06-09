@@ -3,6 +3,8 @@ class Property < ApplicationRecord
 
 	def thumbnail
 		return self.photo.variant(resize: '1200x700!').processed
-	end	
+	end
+
+	belongs_to :account	
 
 end
