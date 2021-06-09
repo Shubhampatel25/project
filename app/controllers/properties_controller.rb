@@ -1,6 +1,6 @@
 class PropertiesController < ApplicationController
   before_action :set_property, only: %i[ show edit update destroy ]
-  before_action :authenticate_account!, except: [:index, :show]
+  #before_action :authenticate_account!, except: [:show, :new]
 
   # GET /properties or /properties.json
   def index
@@ -65,6 +65,6 @@ class PropertiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def property_params
-      params.require(:property).permit(:name, :address, :price, :rooms, :bathroom, :photo)
+      params.require(:property).permit(:name, :address, :price, :rooms, :bathroom, :photo, :account_id)
     end
 end
