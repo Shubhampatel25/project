@@ -1,7 +1,7 @@
 class PropertiesController < ApplicationController
   before_action :set_property, only: %i[ show edit update destroy ]
-  #before_action :authenticate_account!, except: [:show, :new]
-
+  before_action :authenticate_account!, except: [:index, :show]
+  
   # GET /properties or /properties.json
   def index
     @properties = Property.all
@@ -13,7 +13,8 @@ class PropertiesController < ApplicationController
 
   # GET /properties/new
   def new
-    @property = Property.new
+   # @property = Property.new
+    @property = current_account.properties.build
   end
 
   # GET /properties/1/edit
@@ -22,7 +23,7 @@ class PropertiesController < ApplicationController
 
   # POST /properties or /properties.json
   def create
-    @property = Property.new(property_params)
+    @property = current_account.properties.build(property_params)
 
     respond_to do |format|
       if @property.save
@@ -56,7 +57,8 @@ class PropertiesController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_property
