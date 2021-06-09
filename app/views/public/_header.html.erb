@@ -15,25 +15,25 @@
          <li class="nav-item">
           <%= link_to "Add Property",  new_property_path, class: "nav-link" %>
         </li>
-         <li class="nav-item">
+        <li class="nav-item">
           <%= link_to "News",   public_news_path, class: "nav-link" %>
         </li>
+        <li class="nav-item">
+          <%= link_to "Contact",   public_contact_path, class: "nav-link" %>
+        </li>
 
-        <% if account_signed_in? %>
-         <li class="nav-item">
-          <%= link_to "Sign Out",   destroy_account_session_path, method: :delete, class: "nav-link" %>
-         </li>
-        <% else %>
-         <li class="nav-item">
-          <%= link_to "Sign Up", new_account_registration_path, class: "nav-link" %>
-         </li>
-         <li class="nav-item">
-          <%= link_to "Sign In",    new_account_session_path, class: "nav-link" %>
-         </li>
-        <% end %>
-        
-         
-      </form>
+         <% if account_signed_in? %>
+          <li class="nav-item">
+           <%= link_to "Sign Out",   destroy_account_session_path, method: :delete, class: "btn btn-outline-success",  style: "margin-left: 800px" %>
+          </li>
+         <% else %>
+          <li class="nav-item">
+           <%= link_to "Sign Up ", new_account_registration_path, class: "btn btn-outline-success", style: "margin-left: 800px" %>
+          </li>
+          <li class="nav-item">
+           <%= link_to "Sign In", new_account_session_path, class: "btn btn-outline-success" %>
+          </li>
+         <% end %>
     </div>
   </div>
 </nav>
