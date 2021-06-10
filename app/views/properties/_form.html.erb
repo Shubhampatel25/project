@@ -16,7 +16,7 @@
     <%= form.text_field :name, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field ">
     <%= form.label :address %>
     <%= form.text_field :address, class: "form-control" %>
   </div>
@@ -35,13 +35,20 @@
     <%= form.label :bathroom %>
     <%= form.text_field :bathroom, class: "form-control" %>
   </div>
-
   <div class="field">
     <%= form.label :photo %>
     <%= form.file_field :photo, class: "form-control"%>
   </div>
 
+  <div class="control-group">
+     <%= form.label "Category", class: "control-label" %>
+    <div class= "controls">
+      <%= form.select(:category_type, options_for_select([['Rent', 'Rent'], ['Sale', 'Sale']]), { include_blank: true})%>
+    </div>
+  </div>
+<br />
   <div class="actions">
     <%= form.submit "Save Property", class: "btn btn-success" %>
   </div>
+<br />  
 <% end %>

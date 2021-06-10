@@ -16,8 +16,8 @@
 
      <div class="row">        
         <% @properties.each do |property| %>
-          <div class="col-3" style="width:300px; height:300px";>
-            <div class="card">
+          <div class="col-3" >
+            <div class="card mt-3 mb-4">
               <%= image_tag property.photo, style:"width:100%; height: auto;"%>           
              <div class="card-header">             
               <h3><%= link_to property.name, property_path(property) %></h3><br>
