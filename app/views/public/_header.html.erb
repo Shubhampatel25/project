@@ -5,23 +5,25 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav me-auto mb-1 mb-lg-0 ">
         <li class="nav-item">
           <%= link_to  'Home', root_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "Property",  properties_path, class: "nav-link" %>
         </li>
+        <li class="nav-item">
+          <%= link_to "Rent", rent_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sale", sale_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "News", public_news_path, class: "nav-link" %>
+        </li>
          <li class="nav-item">
-          <%= link_to "Add Property",  new_property_path, class: "nav-link" %>
+          <%= link_to "Contact", public_contact_path, class: "nav-link" %>
         </li>
-        <li class="nav-item">
-          <%= link_to "News",   public_news_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Contact",   public_contact_path, class: "nav-link" %>
-        </li>
-
          <% if account_signed_in? %>
           <li class="nav-item">
            <%= link_to "Sign Out",   destroy_account_session_path, method: :delete, class: "btn btn-outline-success",  style: "margin-left: 800px" %>
@@ -34,6 +36,7 @@
            <%= link_to "Sign In", new_account_session_path, class: "btn btn-outline-success" %>
           </li>
          <% end %>
+        </ul> 
     </div>
   </div>
 </nav>

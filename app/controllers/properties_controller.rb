@@ -1,6 +1,6 @@
 class PropertiesController < ApplicationController
   before_action :set_property, only: %i[ show edit update destroy ]
-  before_action :authenticate_account!, except: [:index, :show]
+  before_action :authenticate_account!, except: [:index, :show, :rent, :sale]
   before_action :correct_account, only: [:edit, :update, :destroy]
   
   # GET /properties or /properties.json
@@ -62,6 +62,13 @@ class PropertiesController < ApplicationController
   def correct_account
     @property = current_account.properties.find_by(id: params[:id])
     redirect_to properties_path, notice: "Not Authorizeds To Edit This Property" if @property.nil?
+  end 
+
+  def rent
+    @property = Property.all(:category_type => 'rent')
+  end 
+
+  def sale 
   end  
   
   private
