@@ -5,4 +5,8 @@ class Account < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
          has_many :properties
+
+  def full_name
+    "#{email}"
+  end  
 end

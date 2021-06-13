@@ -1,1 +1,21 @@
-<p>hi<p>
+<% @properties.each do |property| %>
+<div class="row">        
+  <div class="col-3" >
+    <div class="card mt-3 mb-4">
+       <%= image_tag property.photo, style:"width:100%; height: auto;" %>           
+        <div class="card-header">             
+          <h3><%= link_to property.name, property_path(property) %></h3><br>
+          <h5><%= property.category_type %></h5>
+        </div>
+          <div class="card-body">
+           <ul class="list-group list-group-flush">
+              <li class="list-group-item"><h6>Address</h6><%= property.address %></li>
+              <li class="list-group-item"><h6>Price</h6><%= property.price %></li>
+              <li class="list-group-item"><h6>Rooms</h6><%= property.rooms %></li>
+              <li class="list-group-item"><h6>Bathroom</h6><%= property.bathroom %></li>
+            </ul>
+          </div>
+    </div> 
+  </div>
+</div>         
+<% end %>

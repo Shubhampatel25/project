@@ -10,6 +10,7 @@ class PropertiesController < ApplicationController
 
   # GET /properties/1 or /properties/1.json
   def show
+    @agent = @property.account
   end
 
   # GET /properties/new
@@ -65,10 +66,11 @@ class PropertiesController < ApplicationController
   end 
 
   def rent
-    @property = Property.all(:category_type => 'rent')
+    @properties = Property.where(:category_type => "Rent")
   end 
 
-  def sale 
+  def sale
+   @properties = Property.where(:category_type => "Sale") 
   end  
   
   private

@@ -19,8 +19,9 @@
           <div class="col-3" >
             <div class="card mt-3 mb-4">
               <%= image_tag property.photo, style:"width:100%; height: auto;"%>           
-             <div class="card-header">             
+             <div class="card-header" style="text-transform: uppercase">             
               <h3><%= link_to property.name, property_path(property) %></h3><br>
+              <h5>For <%= property.category_type %></h5>
              </div>
              <div class="card-body">
                <ul class="list-group list-group-flush">

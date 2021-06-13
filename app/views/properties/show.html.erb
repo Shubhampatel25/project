@@ -4,13 +4,17 @@
      <%= image_tag(@property.thumbnail) %>
     <% end %>  
   </div> 
-
+<br />
 <div class="container">
   <div class="row">
-    <div class="col">  
-       <h2>
+    <div class="col">   
+       <h4 style="text-transform: uppercase">
          <%= @property.name %>
-        </h2>
+        </h4> 
+        <p>
+          <strong>For</strong>
+          <strong><%= @property.category_type %></strong>
+        </p>
 
         <p>
           <strong>Address:</strong>
@@ -31,6 +35,9 @@
           <strong>Bathroom:</strong>
           <%= @property.bathroom %>
         </p>
+      </div>
+      <div class="col-4">
+        <%= render "properties/agent_details" %>
       </div>
     </div>
 </div>
