@@ -25,11 +25,12 @@
         <td><%= property.price %></td>
         <td><%= property.rooms %></td>
         <td><%= property.bathroom %></td>
-        <td><%= image_tag property.photo, width: "200px"%></td>
+        <% if property.photo.attached? %>
+         <td><%= image_tag property.photo, width: "200px"%></td>
+        <% end %>
         <td><%= property.category_type %></td>
-        <td><%= link_to 'Show', property, class: "btn btn-success"  %></td>
         <td><%= link_to 'Edit', edit_property_path(property), class: "btn btn-success"  %></td>
-        <td><%= link_to 'Destroy', property, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-success"  %></td>
+        <td><%= link_to 'Delete', property, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"  %></td>
       </tr>
     <% end %>
   </tbody>

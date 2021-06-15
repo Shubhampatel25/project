@@ -18,7 +18,9 @@
         <% @properties.each do |property| %>
           <div class="col-3" >
             <div class="card mt-3 mb-4">
-              <%= image_tag property.photo, style:"width:100%; height: auto;"%>           
+              <% if property.photo.attached? %>
+              <%= image_tag property.photo, style:"width:100%; height: auto;"%>
+              <% end %>           
              <div class="card-header" style="text-transform: uppercase">             
               <h3><%= link_to property.name, property_path(property) %></h3><br>
               <h5>For <%= property.category_type %></h5>
